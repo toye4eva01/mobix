@@ -1,0 +1,82 @@
+<div class="pages catalogue-page">
+  <div data-page="projects" class="page no-toolbar no-navbar">
+    <div class="page-content">
+<div class="navbarpages">
+       <div class="nav_left_logo"><a href="main.html"><img src="images/logo.png" alt="" title="" /></a></div>
+       <div class="nav_right_button"><a href="menu.html"><img src="images/icons/white/menu.png" alt="" title="" /></a></div>
+     </div>
+
+<div id="pages_maincontent">
+  <h2 class="page_title">Catalogue <div class="view-cart"><img src="images/cart.png" class="cart-pic"/> My Cart</div></h2>
+<div class="catalogue-item">
+<div class="catalogue-pic">
+<img src="images/iphone-7.png" class="catalogue-item-pic" />
+</div>
+<div class="catalogue-item-desc">
+<h3 class="catalogue-item-name">iPhone 7</h3>
+<h3 class="catalogue-price">2000</h3>
+<!--<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>-->
+<div class="delivery-mode">
+<input type="radio" value="delivery"/>Delivery  
+<input type="radio" value="redeem" class="rd-redeem"/>Redeem In Person
+</div>
+<div class="hidedropdown" style='visibility: hidden;'>
+<p class="lbl-location">Select Location:</p> 
+<select class="drp-delivery-location">
+<option>Branch A</option>
+<option>Branch B</option>
+</select>
+</div>
+
+<div class="col-lg-4">
+
+<input type="submit" name="submit" class="form_submit btn-bid"  value="Add To Cart" id="btn-bid"/>
+
+</div>
+</div>
+</div>
+
+<!--Description Box-->
+<div class="desc-box" hidden="true">
+<img src="images/iphone-7.png" class="catalogue-item-pic-desc" />
+<h3>Description</h3>
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+</div>
+<!--End of description div-->
+
+
+</div>
+</div>
+</div>   
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementByClassName("catalogue-item-pic");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>

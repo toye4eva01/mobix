@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="apple-touch-startup-image-640x1096.png">
+<title>Mobix Perx</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/colors/grayscale.css">
+<link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+<link type="text/css" rel="stylesheet" href="css/animations.css" />
+<link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js" ></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+
+//alert("load");
+var memberid = localStorage.getItem('memberid').trim();
+		$.ajax({
+											type: "POST",
+											url: "showdetailapi.php",
+											data: {memberid:memberid},
+											dataType:"json",
+											
+											success: function(msg){
+											if (msg.status ==1001){
+												$('#currentbal').html(msg.Current_balance);
+												$('#firstn').html(msg.First_name);
+												$('#noteno').html(msg.Total_unread_notifications);	
+												}
+											}
+		});
+
+}); 
+</script>
+</head>
+<body id="mobile_wrap">
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+          <div class="user_login_info">
+                <div class="user_thumb">
+                <img src="images/plogolarge.png" alt="" title="" />
+                  <div class="user_details">
+                 <!--  <p>Hi, <span>John Doe</span></p>  -->
+                  </div>  
+     <!--              <div class="user_social">
+
+  <a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/twitter.png" alt="" title="" /></a>              </div>   -->
+
+  </div>       
+                </div>
+
+                  <nav class="user-nav">
+                    <ul>
+                          <li><span>Hi, <i id="firstn"></i></span></li>
+                          <li><img src="images/icons/white/current-balance.png" alt="" title="" /><span>Current Balance: &nbsp;<strong id="currentbal">  </strong></span></li>
+                      <li><a href="change.html" class="close-panel"><img src="images/icons/white/settings.png" alt="" title="" /><span>Change Password</span></a></li>
+                      <li><a href="profile.html" class="close-panel"><img src="images/icons/white/user.png" alt="" title="" /><span>Profile (<script>document.write(localStorage.getItem('memberid'))</script>)</span></a></li> 
+                      <li><a href="notification.html" class="close-panel"><img src="images/icons/white/message.png" alt="" title="" /><span>Notifications</span><strong id="noteno" class="gold"></strong></a></li>
+                    <!--  <li><a href="features.html" class="close-panel"><img src="images/icons/white/download.png" alt="" title="" /><span>Downloads</span><strong class="blue">5</strong></a></li> -->
+                      <li><a href="#" class="close-panel" id="logout"><img src="images/icons/white/lock.png" alt="" title="" /><span>Logout</span></a></li>
+                    </ul>
+                  </nav>
+          </div>
+    </div>
+
+   
+
+    <div class="views">
+
+      <div class="view view-main">
+
+        <div class="pages  toolbar-through">
+
+          <div data-page="index" class="page homepage">
+            <div class="page-content" id="home12">
+         
+                 
+               
+                 
+            </div>
+          </div>
+        </div>
+					 
+        <!-- Bottom Toolbar-->
+        <div class="toolbar" >
+              <div class="toolbar-inner">
+              <ul class="toolbar_icons">
+              <li><a href="cat2.html"><img src="images/icons/white/merchant2.png" alt="" title="" /></a></li>
+              <li><a href="statement.html"><img src="images/icons/white/statement.png" alt="" title="" /></a></li>
+              <li class="menuicon"><a href="menu.html"><img src="images/icons/white/menu.png" alt="" title="" /></a></li>
+              <li><a href="bid.html"><img src="images/icons/white/bid-for-auction.png" alt="" title="" /></a></li>
+              <li><a href="contact.html"><img src="images/icons/white/contact.png" alt="" title="" /></a></li>
+              </ul>
+              </div>  
+        </div>
+      </div>
+    </div>
+    
+    
+    
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/framework7.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>   
+
+   
+
+
+
+<script type="text/javascript">
+        // Set timeout variables.
+        var timoutWarning = 60000; // Display warning in 1Mins.
+        var timoutNow = 900000; // Timeout in 15 mins.
+        var logoutUrl = 'logout3.php'; // URL to logout page.
+
+        var warningTimer;
+        var timeoutTimer;
+
+        // Start timers.
+        function StartTimers() {
+            warningTimer = setTimeout("IdleWarning()", timoutWarning);
+            timeoutTimer = setTimeout("IdleTimeout()", timoutNow);
+        }
+
+        // Reset timers.
+        function ResetTimers() {
+            clearTimeout(warningTimer);
+            clearTimeout(timeoutTimer);
+            StartTimers();
+            $("#timeout").dialog('close');
+        }
+
+        // Show idle timeout warning dialog.
+        function IdleWarning() {
+            $("#timeout").dialog({
+                modal: false
+            });
+        }
+
+        // Logout the user.
+        function IdleTimeout() {
+            window.location = logoutUrl;
+        }
+    
+</script>
+
+
+
+
+  </body>
+</html>
