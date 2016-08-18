@@ -188,7 +188,7 @@ $('#login').click(function(){
 		//alert("say GO");
 		$.ajax({
 			type:"POST",
-			url:"http://rewardsboxnigeria.com/perx/api/loginapi.php",
+			url:"http://rewardsboxnigeria.com/demodiscount/mobi/loginscript.php",
 			data:{username:username, password:password},
 			dataType:"json",
 			success: function(msg){
@@ -209,9 +209,9 @@ $('#login').click(function(){
 												
 												window.location.replace('main.html');
 												}
-												else if (msg.status ==2005){
+											/*	else if (msg.status ==2005){
 													alert("Invaid Username or Password");
-											/*	localStorage.removeItem('text');
+												localStorage.removeItem('text');
 												localStorage.removeItem('password');
 												localStorage.removeItem('memberid');
 												localStorage.removeItem('firstname');
@@ -219,6 +219,7 @@ $('#login').click(function(){
 												localStorage.removeItem('bal');*/
 												}
 												else {
+													//alert("Invaid Username or Password");
 
 												alert(msg.status);
 
