@@ -198,10 +198,10 @@ $('#login').click(function(){
 											} else {
 												if (msg.status ==1001){
 												// alert("nice");
-												 var usernamevalue = document.getElementById('username').value;
-  													localStorage.setItem('text', usernamevalue);
- 												 var passwordvalue = document.getElementById('password').value;
-				  									localStorage.setItem('password', passwordvalue);
+											//	 var usernamevalue = document.getElementById('username').value;
+  												//	localStorage.setItem('text', usernamevalue);
+ 											//	 var passwordvalue = document.getElementById('password').value;
+				  								//	localStorage.setItem('password', passwordvalue);
 												//	localStorage.setItem('memberid', msg.Membership_id);
 												//	localStorage.setItem('firstname', msg.First_name);
 												//	localStorage.setItem('notify', msg.Total_unread_notifications);
@@ -219,7 +219,7 @@ $('#login').click(function(){
 												localStorage.removeItem('bal');*/
 												}
 												else {
-													//alert("Invaid Username or Password");
+													alert("Invaid Username or Password");
 
 												alert(msg.status);
 
