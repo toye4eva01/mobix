@@ -143,7 +143,7 @@ $.ajax({
 												
 												}
 											
-												else {
+											/*	else {
 
 												alert("Invalid Credentials");
 												localStorage.removeItem('text');
@@ -152,7 +152,7 @@ $.ajax({
 												localStorage.removeItem('firstname');
 												localStorage.removeItem('notify');
 												localStorage.removeItem('bal');
-												}	
+												}	*/
 										}
 	}
 		});
@@ -188,7 +188,7 @@ $('#login').click(function(){
 		//alert("say GO");
 		$.ajax({
 			type:"POST",
-			url:"loginapi.php",
+			url:"http://rewardsboxnigeria.com/perx/api/loginapi.php",
 			data:{username:username, password:password},
 			dataType:"json",
 			success: function(msg){
@@ -202,21 +202,21 @@ $('#login').click(function(){
   													localStorage.setItem('text', usernamevalue);
  												 var passwordvalue = document.getElementById('password').value;
 				  									localStorage.setItem('password', passwordvalue);
-													localStorage.setItem('memberid', msg.Membership_id);
-													localStorage.setItem('firstname', msg.First_name);
-													localStorage.setItem('notify', msg.Total_unread_notifications);
-													localStorage.setItem('bal', msg.Current_balance);
+												//	localStorage.setItem('memberid', msg.Membership_id);
+												//	localStorage.setItem('firstname', msg.First_name);
+												//	localStorage.setItem('notify', msg.Total_unread_notifications);
+												//	localStorage.setItem('bal', msg.Current_balance);
 												
 												window.location.replace('main.html');
 												}
 												else if (msg.status ==2005){
 													alert("Invaid Username or Password");
-												localStorage.removeItem('text');
+											/*	localStorage.removeItem('text');
 												localStorage.removeItem('password');
 												localStorage.removeItem('memberid');
 												localStorage.removeItem('firstname');
 												localStorage.removeItem('notify');
-												localStorage.removeItem('bal');
+												localStorage.removeItem('bal');*/
 												}
 												else {
 
